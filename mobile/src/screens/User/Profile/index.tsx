@@ -5,7 +5,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
-import { ArrowLeft, Camera } from 'phosphor-react-native';
+import { ArrowLeft, Camera, Envelope, User } from 'phosphor-react-native';
 
 import {
   ButtonCamContainer,
@@ -98,8 +98,13 @@ export function Profile() {
           </ButtonCamContainer>
         </ImageWrapper>
         <Form>
-          <Input placeholder="Seu nome" onChangeText={setName} defaultValue={user?.name} />
-          <Input placeholder="Seu e-mail" value={user?.email} editable={false} />
+          <Input
+            icon={User}
+            placeholder="Seu nome"
+            onChangeText={setName}
+            defaultValue={user?.name}
+          />
+          <Input icon={Envelope} placeholder="Seu e-mail" value={user?.email} editable={false} />
           {/* <Input placeholder="Novo password" onChangeText={setPassword} /> */}
           <Button title="Atualizar" onPress={handleUpdate} isLoading={isLoadingUser} />
 

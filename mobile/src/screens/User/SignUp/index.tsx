@@ -5,7 +5,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
-import { ArrowLeft, Camera } from 'phosphor-react-native';
+import { ArrowLeft, Camera, Envelope, Lock, User } from 'phosphor-react-native';
 
 import {
   ButtonCamContainer,
@@ -75,9 +75,14 @@ export function SignUp() {
           </ButtonCamContainer>
         </ImageWrapper>
         <Form>
-          <Input placeholder="Seu nome" onChangeText={setName} />
-          <Input placeholder="Seu e-mail" onChangeText={setEmail} />
-          <Input placeholder="Seu password" onChangeText={setPassword} secureTextEntry />
+          <Input icon={User} placeholder="Seu nome" onChangeText={setName} />
+          <Input icon={Envelope} placeholder="Seu e-mail" onChangeText={setEmail} />
+          <Input
+            icon={Lock}
+            placeholder="Seu password"
+            onChangeText={setPassword}
+            secureTextEntry
+          />
           <Button title="Cadastrar" onPress={handleSignUp} isLoading={isLoadingUser} />
         </Form>
       </Container>
